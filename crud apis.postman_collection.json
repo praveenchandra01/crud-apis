@@ -1,0 +1,457 @@
+{
+	"info": {
+		"_postman_id": "ac73500b-97ac-44e1-9aa1-e4cff0e5ad1a",
+		"name": "crud apis",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json",
+		"_exporter_id": "14303168"
+	},
+	"item": [
+		{
+			"name": "Home route",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "http://localhost:5050/",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "5050",
+					"path": [
+						""
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Create user",
+			"request": {
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n            \"name\": \"aman\",\r\n            \"salary\": 40000,\r\n            \"department\": \"QA\"\r\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "http://localhost:5050/api/user",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "5050",
+					"path": [
+						"api",
+						"user"
+					]
+				}
+			},
+			"response": [
+				{
+					"name": "Create user",
+					"originalRequest": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n            \"name\": \"Sazid\",\r\n            \"salary\": 40000,\r\n            \"department\": \"Frontend\"\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "http://localhost:5050/api/user",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "5050",
+							"path": [
+								"api",
+								"user"
+							]
+						}
+					},
+					"status": "OK",
+					"code": 200,
+					"_postman_previewlanguage": "json",
+					"header": [
+						{
+							"key": "X-Powered-By",
+							"value": "Express"
+						},
+						{
+							"key": "Content-Type",
+							"value": "application/json; charset=utf-8"
+						},
+						{
+							"key": "Content-Length",
+							"value": "112"
+						},
+						{
+							"key": "ETag",
+							"value": "W/\"70-flzPWonJ1VG2F43va1hSuociFUM\""
+						},
+						{
+							"key": "Date",
+							"value": "Sun, 17 Jul 2022 23:21:27 GMT"
+						},
+						{
+							"key": "Connection",
+							"value": "keep-alive"
+						},
+						{
+							"key": "Keep-Alive",
+							"value": "timeout=5"
+						}
+					],
+					"cookie": [],
+					"body": "{\n    \"success\": true,\n    \"data\": {\n        \"name\": \"Sazid\",\n        \"salary\": 40000,\n        \"department\": \"Frontend\",\n        \"_id\": \"62d49977ed3ea0f71633dc9e\"\n    }\n}"
+				}
+			]
+		},
+		{
+			"name": "Get all users",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "http://localhost:5050/api/user",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "5050",
+					"path": [
+						"api",
+						"user"
+					]
+				}
+			},
+			"response": [
+				{
+					"name": "Get all users",
+					"originalRequest": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "http://localhost:5050/api/user",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "5050",
+							"path": [
+								"api",
+								"user"
+							]
+						}
+					},
+					"status": "OK",
+					"code": 200,
+					"_postman_previewlanguage": "json",
+					"header": [
+						{
+							"key": "X-Powered-By",
+							"value": "Express"
+						},
+						{
+							"key": "Content-Type",
+							"value": "application/json; charset=utf-8"
+						},
+						{
+							"key": "Content-Length",
+							"value": "314"
+						},
+						{
+							"key": "ETag",
+							"value": "W/\"13a-nTo6O/ufDSyK+UUsrovuw6RASHk\""
+						},
+						{
+							"key": "Date",
+							"value": "Sun, 17 Jul 2022 23:22:17 GMT"
+						},
+						{
+							"key": "Connection",
+							"value": "keep-alive"
+						},
+						{
+							"key": "Keep-Alive",
+							"value": "timeout=5"
+						}
+					],
+					"cookie": [],
+					"body": "{\n    \"success\": true,\n    \"data\": [\n        {\n            \"_id\": \"62d4995fed3ea0f71633dc9a\",\n            \"name\": \"Praveen\",\n            \"salary\": 50000,\n            \"department\": \"Tech\",\n            \"__v\": 0\n        },\n        {\n            \"_id\": \"62d4996ded3ea0f71633dc9c\",\n            \"name\": \"Rithik\",\n            \"salary\": 60000,\n            \"department\": \"Testing\",\n            \"__v\": 0\n        },\n        {\n            \"_id\": \"62d49977ed3ea0f71633dc9e\",\n            \"name\": \"Sazid\",\n            \"salary\": 40000,\n            \"department\": \"Frontend\",\n            \"__v\": 0\n        }\n    ]\n}"
+				}
+			]
+		},
+		{
+			"name": "Get single user",
+			"protocolProfileBehavior": {
+				"disableBodyPruning": true
+			},
+			"request": {
+				"method": "GET",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": ""
+				},
+				"url": {
+					"raw": "http://localhost:5050/api/user/62d4995fed3ea0f71633dc9a",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "5050",
+					"path": [
+						"api",
+						"user",
+						"62d4995fed3ea0f71633dc9a"
+					]
+				}
+			},
+			"response": [
+				{
+					"name": "Get single user",
+					"originalRequest": {
+						"method": "GET",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": ""
+						},
+						"url": {
+							"raw": "http://localhost:5050/api/user/62d4995fed3ea0f71633dc9a",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "5050",
+							"path": [
+								"api",
+								"user",
+								"62d4995fed3ea0f71633dc9a"
+							]
+						}
+					},
+					"status": "OK",
+					"code": 200,
+					"_postman_previewlanguage": "json",
+					"header": [
+						{
+							"key": "X-Powered-By",
+							"value": "Express"
+						},
+						{
+							"key": "Content-Type",
+							"value": "application/json; charset=utf-8"
+						},
+						{
+							"key": "Content-Length",
+							"value": "118"
+						},
+						{
+							"key": "ETag",
+							"value": "W/\"76-YBxTe5Pi4aZcqtAtrKH0OYwfljM\""
+						},
+						{
+							"key": "Date",
+							"value": "Sun, 17 Jul 2022 23:22:48 GMT"
+						},
+						{
+							"key": "Connection",
+							"value": "keep-alive"
+						},
+						{
+							"key": "Keep-Alive",
+							"value": "timeout=5"
+						}
+					],
+					"cookie": [],
+					"body": "{\n    \"success\": true,\n    \"data\": {\n        \"_id\": \"62d4995fed3ea0f71633dc9a\",\n        \"name\": \"Praveen\",\n        \"salary\": 50000,\n        \"department\": \"Tech\",\n        \"__v\": 0\n    }\n}"
+				}
+			]
+		},
+		{
+			"name": "Update user",
+			"request": {
+				"method": "PUT",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n    \"name\": \"Rithik\",\r\n    \"salary\": 55000,\r\n    \"department\": \"Testing\",\r\n    \"__v\": 0\r\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "http://localhost:5050/api/user/62d4996ded3ea0f71633dc9c",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "5050",
+					"path": [
+						"api",
+						"user",
+						"62d4996ded3ea0f71633dc9c"
+					]
+				}
+			},
+			"response": [
+				{
+					"name": "Update user",
+					"originalRequest": {
+						"method": "PUT",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"name\": \"Rithik\",\r\n    \"salary\": 55000,\r\n    \"department\": \"Testing\",\r\n    \"__v\": 0\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "http://localhost:5050/api/user/62d4996ded3ea0f71633dc9c",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "5050",
+							"path": [
+								"api",
+								"user",
+								"62d4996ded3ea0f71633dc9c"
+							]
+						}
+					},
+					"status": "OK",
+					"code": 200,
+					"_postman_previewlanguage": "json",
+					"header": [
+						{
+							"key": "X-Powered-By",
+							"value": "Express"
+						},
+						{
+							"key": "Content-Type",
+							"value": "application/json; charset=utf-8"
+						},
+						{
+							"key": "Content-Length",
+							"value": "120"
+						},
+						{
+							"key": "ETag",
+							"value": "W/\"78-LRB/6IDvCH2/SrdVcRA6B3FR9wY\""
+						},
+						{
+							"key": "Date",
+							"value": "Sun, 17 Jul 2022 23:23:39 GMT"
+						},
+						{
+							"key": "Connection",
+							"value": "keep-alive"
+						},
+						{
+							"key": "Keep-Alive",
+							"value": "timeout=5"
+						}
+					],
+					"cookie": [],
+					"body": "{\n    \"success\": true,\n    \"data\": {\n        \"_id\": \"62d4996ded3ea0f71633dc9c\",\n        \"name\": \"Rithik\",\n        \"salary\": 55000,\n        \"department\": \"Testing\",\n        \"__v\": 0\n    }\n}"
+				}
+			]
+		},
+		{
+			"name": "Delete user",
+			"request": {
+				"method": "DELETE",
+				"header": [],
+				"url": {
+					"raw": "http://localhost:5050/api/user/62d49a24ed3ea0f71633dca4",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "5050",
+					"path": [
+						"api",
+						"user",
+						"62d49a24ed3ea0f71633dca4"
+					]
+				}
+			},
+			"response": [
+				{
+					"name": "Delete user",
+					"originalRequest": {
+						"method": "DELETE",
+						"header": [],
+						"url": {
+							"raw": "http://localhost:5050/api/user/62d49a24ed3ea0f71633dca4",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "5050",
+							"path": [
+								"api",
+								"user",
+								"62d49a24ed3ea0f71633dca4"
+							]
+						}
+					},
+					"status": "OK",
+					"code": 200,
+					"_postman_previewlanguage": "json",
+					"header": [
+						{
+							"key": "X-Powered-By",
+							"value": "Express"
+						},
+						{
+							"key": "Content-Type",
+							"value": "application/json; charset=utf-8"
+						},
+						{
+							"key": "Content-Length",
+							"value": "314"
+						},
+						{
+							"key": "ETag",
+							"value": "W/\"13a-+RDpClKA7GuuDSL8UVjp83aMVnA\""
+						},
+						{
+							"key": "Date",
+							"value": "Sun, 17 Jul 2022 23:25:25 GMT"
+						},
+						{
+							"key": "Connection",
+							"value": "keep-alive"
+						},
+						{
+							"key": "Keep-Alive",
+							"value": "timeout=5"
+						}
+					],
+					"cookie": [],
+					"body": "{\n    \"success\": true,\n    \"data\": [\n        {\n            \"_id\": \"62d4995fed3ea0f71633dc9a\",\n            \"name\": \"Praveen\",\n            \"salary\": 50000,\n            \"department\": \"Tech\",\n            \"__v\": 0\n        },\n        {\n            \"_id\": \"62d4996ded3ea0f71633dc9c\",\n            \"name\": \"Rithik\",\n            \"salary\": 55000,\n            \"department\": \"Testing\",\n            \"__v\": 0\n        },\n        {\n            \"_id\": \"62d49977ed3ea0f71633dc9e\",\n            \"name\": \"Sazid\",\n            \"salary\": 40000,\n            \"department\": \"Frontend\",\n            \"__v\": 0\n        }\n    ]\n}"
+				}
+			]
+		}
+	]
+}
